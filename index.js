@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
+const { keep_alive } = require("./keep_alive");
 const fs = require("fs");
 const config = require("./config.json");
 client.config = config;
@@ -110,4 +111,4 @@ client.giveawaysManager.on('giveawayReactionRemoved', (giveaway, member, reactio
 });
 
 // Login through the client
-client.login(config.token);
+client.login(process.env.token);
